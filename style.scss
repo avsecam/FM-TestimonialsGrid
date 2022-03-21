@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap");
+
+$violet400: hsl(263, 55%, 52%);
+$gray400: hsl(217, 19%, 35%);
+$gray900: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+
+$gray100: hsl(210, 46%, 95%);
+$gray200: hsl(0, 0%, 81%);
+
+$fontLight: 400;
+$fontMedium: 500;
+$fontBold: 600;
+
+html {
+	font-size: 13px;
+	font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+
+body {
+	background-color: $gray100;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100%;
+	margin: 0;
+}
+
+main {
+	width: 80%;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+.testimonial {
+	border-radius: 0.5rem;
+	margin: 1rem;
+	padding: 2.5rem;
+	color: $white;
+	box-shadow: 3rem 3rem 5rem -2.5rem hsla(0 0 0 / 0.2);
+
+	> .header {
+		display: flex;
+		align-items: center;
+		> img {
+			border-radius: 50%;
+			border: 2px solid $white;
+			width: 3rem;
+			margin-right: 2rem;
+		}
+		> .userInfo {
+			display: flex;
+			flex-direction: column;
+
+			> * {
+				margin: 0;
+				font-weight: $fontMedium;
+			}
+
+			> h2 {
+				opacity: 50%;
+				font-size: 1.2rem;
+				font-weight: $fontLight;
+			}
+		}
+	}
+
+	> h1 {
+		line-height: 1.4em;
+	}
+
+	> p {
+		opacity: 70%;
+		font-weight: $fontLight;
+		line-height: 1.5em;
+		letter-spacing: 0.03em;
+		margin-bottom: 0;
+	}
+
+	&:first-of-type {
+		margin-top: 5rem;
+	}
+	&:last-of-type {
+		margin-bottom: 5rem;
+	}
+}
+
+.purple {
+	background-color: $violet400;
+}
+
+.gray {
+	background-color: $gray400;
+}
+
+.white {
+	background-color: $white;
+	color: $gray400;
+	p {
+		font-weight: $fontMedium;
+	}
+}
+
+.black {
+	background-color: $gray900;
+
+	img {
+		border-color: $violet400 !important;
+	}
+}
+
+.quotes {
+	background-image: url(./images/bg-pattern-quotation.svg);
+	background-repeat: no-repeat;
+	background-position: right 15% top;
+}
+
+
+@media screen and (min-aspect-ratio: 20/16) {
+	body {
+		height: 100vh;
+	}
+
+	main {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.testimonial {
+		&:first-of-type {
+			margin-top: 1rem;
+		}
+		&:last-of-type {
+			margin-bottom: 1rem;
+		}
+	}
+
+
+	.white.tall {
+		grid-column: 4;
+		grid-row: 1 / span 2;
+	}
+
+	.white:not(.tall) {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.black {
+		grid-column: 2 / span 2;
+	}
+
+	.purple {
+		grid-column: span 2;
+	}
+
+	.tall {
+		grid-row: span 2;
+	}
+}

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap");
+html {
+  font-size: 13px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background-color: #ecf2f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.testimonial {
+  border-radius: 0.5rem;
+  margin: 1rem;
+  padding: 2.5rem;
+  color: white;
+  box-shadow: 3rem 3rem 5rem -2.5rem rgba(0, 0, 0, 0.2);
+}
+.testimonial > .header {
+  display: flex;
+  align-items: center;
+}
+.testimonial > .header > img {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 3rem;
+  margin-right: 2rem;
+}
+.testimonial > .header > .userInfo {
+  display: flex;
+  flex-direction: column;
+}
+.testimonial > .header > .userInfo > * {
+  margin: 0;
+  font-weight: 500;
+}
+.testimonial > .header > .userInfo > h2 {
+  opacity: 50%;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.testimonial > h1 {
+  line-height: 1.4em;
+}
+.testimonial > p {
+  opacity: 70%;
+  font-weight: 400;
+  line-height: 1.5em;
+  letter-spacing: 0.03em;
+  margin-bottom: 0;
+}
+.testimonial:first-of-type {
+  margin-top: 5rem;
+}
+.testimonial:last-of-type {
+  margin-bottom: 5rem;
+}
+
+.purple {
+  background-color: #7541c8;
+}
+
+.gray {
+  background-color: #48556a;
+}
+
+.white {
+  background-color: white;
+  color: #48556a;
+}
+.white p {
+  font-weight: 500;
+}
+
+.black {
+  background-color: #19212e;
+}
+.black img {
+  border-color: #7541c8 !important;
+}
+
+.quotes {
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: right 15% top;
+}
+
+@media screen and (min-aspect-ratio: 20/16) {
+  body {
+    height: 100vh;
+  }
+
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .testimonial:first-of-type {
+    margin-top: 1rem;
+  }
+  .testimonial:last-of-type {
+    margin-bottom: 1rem;
+  }
+
+  .white.tall {
+    grid-column: 4;
+    grid-row: 1/span 2;
+  }
+
+  .white:not(.tall) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .black {
+    grid-column: 2/span 2;
+  }
+
+  .purple {
+    grid-column: span 2;
+  }
+
+  .tall {
+    grid-row: span 2;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
